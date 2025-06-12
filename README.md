@@ -160,7 +160,7 @@ This project uses [TMDB (The Movie Database) API](https://www.themoviedb.org/doc
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/netflix-clone.git
+git clone https://github.com/Doaamahdy/netflix-clone.git
 cd netflix-clone
 
 # Setup backend
