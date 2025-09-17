@@ -17,6 +17,9 @@ console.log(__direname);
 
 app.use(express.json());
 app.use(cookieParser());
+app.get("/", (req, res) => {
+  res.send("Welcome to the server");
+});
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/movie", protectRoute, movieRouter);
 app.use("/api/v1/tv", protectRoute, tvRouter);
