@@ -59,6 +59,7 @@ const signup = async (req, res) => {
         message: "password must be at least 6 characters",
       });
     }
+    console.log("Hello World");
     const existingUSerByEmail = await User.findOne({ username });
     if (existingUSerByEmail) {
       return res
