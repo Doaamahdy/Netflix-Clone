@@ -34,7 +34,7 @@ app.use("/api/v1/search", protectRoute, searchRouter);
 //   });
 // }
 
+await connectDB();
 app.listen(enVars.PORT, () => {
   console.log(`Listening to the server ${enVars.PORT}`);
-  connectDB();
 });
