@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [tailwindcss(), react()],
   server: {
     proxy: {
-      "/api": "https://netflix-clone-mu-red.vercel.app/api",
+      "/api": "https://netflix-clone-server-neon.vercel.app/api",
     },
   },
 });
