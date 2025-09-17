@@ -3,7 +3,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 
-const envVars = require("./config/envVars");
+const enVars = require("./config/enVars");
 const connectDB = require("./config/db");
 const authRouter = require("./routes/auth.route");
 const movieRouter = require("./routes/movie.route");
@@ -22,7 +22,7 @@ app.use("/api/v1/movie", protectRoute, movieRouter);
 app.use("/api/v1/tv", protectRoute, tvRouter);
 app.use("/api/v1/search", protectRoute, searchRouter);
 
-if (envVars.NODE_ENV === "production") {
+if (enVars.NODE_ENV === "production") {
   console.log("production");
   app.use(express.static(path.join(__direname, "/frontend/dist")));
 
@@ -31,7 +31,7 @@ if (envVars.NODE_ENV === "production") {
   });
 }
 
-app.listen(envVars.PORT, () => {
-  console.log(`Listening to the server ${envVars.PORT}`);
+app.listen(enVars.PORT, () => {
+  console.log(`Listening to the server ${enVars.PORT}`);
   connectDB();
 });

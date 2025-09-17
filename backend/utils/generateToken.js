@@ -1,15 +1,15 @@
 const jwt = require("jsonwebtoken");
-const envVars = require("../config/envVars");
+const enVars = require("../config/enVars");
 
 const genrateTokenAndSetCookie = async (id, res) => {
-  const token = jwt.sign({ id: id }, envVars.JWT_SECRET, {
+  const token = jwt.sign({ id: id }, enVars.JWT_SECRET, {
     expiresIn: "15d",
   });
   res.cookie("jwt-netflix", token, {
     maxAge: 15 * 24 * 60 * 60 * 1000,
     httpOnly:true, // prevent XSS attacks
     sameSite:"strict",
-    secure: envVars.NODE_ENV !=="development"
+    secure: enVars.NODE_ENV !=="development"
   });
   return token;
 };

@@ -1,12 +1,12 @@
 const axios = require("axios");
-const envVars = require("./../config/envVars");
+const enVars = require("./../config/enVars");
 
 const fetchTMDBMovies = async (url) => {
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: `Bearer ${envVars.API_TOKEN}`,
+      Authorization: `Bearer ${enVars.API_TOKEN}`,
     },
   };
 

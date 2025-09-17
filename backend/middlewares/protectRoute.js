@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const envVars = require("../config/envVars");
+const enVars = require("../config/enVars");
 const User = require("../models/user");
 
 const protectRoute = async (req, res, next) => {
@@ -11,7 +11,7 @@ const protectRoute = async (req, res, next) => {
         message: "unauthorized - no token provided",
       });
     }
-    const decoded = jwt.verify(token, envVars.JWT_SECRET);
+    const decoded = jwt.verify(token, enVars.JWT_SECRET);
     if (!decoded) {
       return res.status(401).json({
         success: false,
