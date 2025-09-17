@@ -19,22 +19,16 @@ console.log(__direname);
 app.use(express.json());
 app.use(cookieParser());
 app.get("/", (req, res) => {
-  res.send("Welcome to the server");
+   return res.json({
+    succes: "sucess",
+  });
 });
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/movie", protectRoute, movieRouter);
 app.use("/api/v1/tv", protectRoute, tvRouter);
 app.use("/api/v1/search", protectRoute, searchRouter);
 
-// if (enVars.NODE_ENV === "production") {
-//   console.log("production");
-//   app.use(express.static(path.join(__direname, "/frontend/dist")));
 
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-//   });
-// }
-
-app.listen(enVars.PORT, () => {
+app.listen(enVars.PORT||5000, () => {
   console.log(`Listening to the server ${enVars.PORT}`);
 });
