@@ -25,14 +25,14 @@ app.use("/api/v1/movie", protectRoute, movieRouter);
 app.use("/api/v1/tv", protectRoute, tvRouter);
 app.use("/api/v1/search", protectRoute, searchRouter);
 
-if (enVars.NODE_ENV === "production") {
-  console.log("production");
-  app.use(express.static(path.join(__direname, "/frontend/dist")));
+// if (enVars.NODE_ENV === "production") {
+//   console.log("production");
+//   app.use(express.static(path.join(__direname, "/frontend/dist")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+//   });
+// }
 
 app.listen(enVars.PORT, () => {
   console.log(`Listening to the server ${enVars.PORT}`);
