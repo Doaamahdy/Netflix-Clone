@@ -11,6 +11,7 @@ const tvRouter = require("./routes/tv.route");
 const searchRouter = require("./routes/search.route");
 const protectRoute = require("./middlewares/protectRoute");
 const app = express();
+await connectDB();
 
 const __direname = path.resolve();
 console.log(__direname);
@@ -34,7 +35,6 @@ app.use("/api/v1/search", protectRoute, searchRouter);
 //   });
 // }
 
-await connectDB();
 app.listen(enVars.PORT, () => {
   console.log(`Listening to the server ${enVars.PORT}`);
 });
