@@ -21,15 +21,12 @@ const MovieSlider = ({ category }) => {
       try {
         const res = await axios.get(`api/v1/${contentType}/${category}`);
         setContent(res.data.content);
-        console.log(content);
-        console.log("kdghhhhhhhhf");
       } catch (err) {
         console.log(err);
       }
     };
     getContent();
   }, [category, contentType]);
-  console.log("here is the content: ", content);
 
   const scrollLeft = () => {
     if (sliderRef.current) {

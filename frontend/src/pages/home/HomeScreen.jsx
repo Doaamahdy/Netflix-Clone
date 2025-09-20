@@ -74,7 +74,7 @@ const HomeScreen = () => {
               <Link
                 to={`/watch/${trendingContent?.id}`}
                 className="bg-gray-500/70 hover:bg-gray-500 text-white py-2 px-4 rounded flex items-center"
-                onClick={() => console.log("More Info")}
+               
               >
                 <Info className="size-6 mr-2" />
                 More Info

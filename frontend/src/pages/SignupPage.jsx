@@ -11,7 +11,6 @@ const SignupPage = () => {
 
   const handleSignup = async(e) => {
     e.preventDefault();
-    console.log(email, " ", password, " ", username);
     await signup({email, password, username});
   };
   return (

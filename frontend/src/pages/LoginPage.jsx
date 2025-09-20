@@ -6,10 +6,8 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useAuthStore();
-  console.log(login);
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(email, " ", password);
     login({ email, password });
     setEmail("");
     setPassword("");

@@ -53,13 +53,10 @@ const HistoryPage = () => {
   }, []);
 
   const handleDelete = async (id) => {
-    console.log(id);
     try {
       const res = await axios.delete(`/api/v1/search/history/${id}`);
-      console.log(res);
       setSearchHistory(searchHistory.filter((item) => item.id !== id))
     } catch (err){ 
-        console.log(err);
         toast.error("failed to delete search item");
      }
   };

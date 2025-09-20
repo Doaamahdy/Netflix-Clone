@@ -5,7 +5,6 @@ const searchPerson = async (req, res) => {
   try {
     const url = `https://api.themoviedb.org/3/search/person?query=${query}&include_adult=false&language=en-US&page=1`;
     const data = await fetchTMDBMovies(url);
-    console.log(data);
     if (data.results.length === 0) {
       return res.status(404).json(null);
     }

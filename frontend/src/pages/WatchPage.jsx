@@ -18,7 +18,6 @@ const WatchPage = () => {
   const [similarContetnt, setSimilarContent] = useState([]);
   const { contentType } = useContentStore();
   const sliderRef = useRef(null);
-  console.log("ContentType ", contentType);
 
   useEffect(() => {
     const getTrailers = async () => {
@@ -105,7 +104,6 @@ const WatchPage = () => {
         </div>
       </div>
   </div>);
-  console.log(content);
   return (
     <div className="bg-black min-h-screen text-white">
       <div className="mx-auto continer px-4 py-8 h-full">

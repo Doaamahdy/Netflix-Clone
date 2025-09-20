@@ -1,7 +1,6 @@
 const User = require("../models/user");
 const genrateTokenAndSetCookie = require("../utils/generateToken");
 const login = async (req, res) => {
-  console.log("login called");
   try {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -59,7 +58,6 @@ const signup = async (req, res) => {
         message: "password must be at least 6 characters",
       });
     }
-    console.log("Hello World");
     const existingUSerByEmail = await User.findOne({ username });
     if (existingUSerByEmail) {
       return res

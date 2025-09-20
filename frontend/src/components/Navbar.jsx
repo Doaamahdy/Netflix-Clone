@@ -10,7 +10,6 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
   const { user, logout } = useAuthStore();
-  console.log(user);
   
   const {setContentType} = useContentStore();
   return (
